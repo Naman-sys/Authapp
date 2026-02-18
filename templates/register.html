@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Register New User</h1><br><br>
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+       <form action="/register" method="post"> 
+            <div class="mb-3">
+                <label class="form-label">Username : </label>
+                <input type="text" class="form-control" placeholder="Enter your username" name="Username"/>
+            </div><br><br>
+            <div class="mb-3">
+                <label class="form-label">Email : </label>
+                <input type="email" class="form-control" placeholder="Enter your email" name="email"/>
+            </div><br><br>
+            <div class="mb-3">
+                <label class="form-label">Password : </label>
+                <input type="password" class="form-control" placeholder="Enter your password" name="password"/>
+            </div><br><br>
+            <button type="submit" class="btn btn-dark">Register</button>
+       </form>
+    </div>
+</body>
+</html>
+{% endblock body %}
